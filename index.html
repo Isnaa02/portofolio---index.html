@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Isna's Portofolio</title>
+
+    <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Custom CSS -->
+    <style>
+      :root {
+        --primary-color: hsl(187, 54%, 53%);
+        --secondary-color: #f5b921;
+        --accent-color: #4b78a0;
+        --dark-color: #7999b9;
+        --light-color: #f8f9fa;
+        --background-gradient: linear-gradient(135deg, hsl(187, 54%, 53%) 0%, #194153 100%);
+      } 
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f5f5f5;
+        color: var(--dark-color);
+      }
+      
+      .nav {
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-link {
+        color: var(--primary-color) !important;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        color: var(--accent-color) !important;
+        transform: translateY(-2px);
+      }
+      
+      .all-body-cover {
+        background: var(--background-gradient);
+        padding-top: 100px;
+        padding-bottom: 20px;
+        color: white;
+      }
+      
+      .img-thumbnail {
+        border: 4px solid white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .img-thumbnail:hover {
+        transform: scale(1.05);
+      }
+      
+      .nama h4 {
+        margin-top: 20px;
+        font-size: 28px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      }
+      
+      .nameHeading, .achive, .contactMe {
+        color: var(--primary-color);
+        margin: 40px 0 30px;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .nameHeading:after, .achive:after, .contactMe:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 60%;
+        height: 3px;
+        background-color: var(--accent-color);
+      }
+      
+      .subNameHeading {
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+      
+      .firstContainer, .fourthContainer {
+        padding: 40px 0;
+        background-color: white;
+      }
+      
+      .education {
+        position: relative;
+      }
+      
+      .startEnd {
+        margin: 5px 0;
+        font-style: italic;
+        color: #666;
+      }
+      
+      .itemEdu {
+        margin: 10px 0;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-danger {
+        background-color: var(--accent-color);
+        border: none;
+      }
+      
+      .btn-danger:hover {
+        background-color: #2d3ace;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+      }
+      
+      .btn-primary:hover {
+        background-color: #0b2294;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .fa-arrow-circle-down {
+        color: var(--primary-color);
+        font-size: 24px;
+        margin: 5px 0;
+      }
+      
+      .table {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      
+      .table thead {
+        background-color: var(--primary-color);
+        color: white;
+      }
+      
+      .fivethContainer {
+        padding: 40px 0;
+        background-color: var(--light-color);
+        text-align: center;
+      }
+      
+      .linkSosmed {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0;
+      }
+      
+      .itemSosmed {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        background-color: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        margin: 0 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+      
+      .itemSosmed:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-5px);
+      }
+      
+      .fab {
+        font-size: 20px;
+      }
+      
+      .waves, .wavesContact {
+        display: block;
+      }
+      
+      @media (max-width: 768px) {
+        .nav-item-item {
+          display: none;
+        }
+        
+        .buttonToggle {
+          display: block;
+          padding: 10px;
+          font-size: 20px;
+          color: var(--primary-color);
+          cursor: pointer;
+        }
+      }
+      
+      @media (min-width: 769px) {
+        .buttonToggle {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <ul class="nav justify-content-center bg-light fixed-top">
+      <li class="nav-item">
+        <a class="buttonToggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+          <i class="fas fa-bars toggleSlide"></i>
+        </a>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul>
+              <li><a class="nav-link" href="#Biodata">Biodata</a></li>
+              <li><a class="nav-link" href="#Certifications">Certifications</a></li>
+              <li><a class="nav-link" href="#Contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item-item">
+        <a class="nav-link" href="#Biodata">Biodata</a>
+      </li>
+      <li class="nav-item-item">
+        <a class="nav-link" href="#Certifications">Certifications</a>
+      </li>
+      <li class="nav-item-item">
+        <a class="nav-link" href="#Contact">Contact</a>
+      </li>
+    </ul>
+
+    <!-- Header Section -->
+    <div class="all-body-cover">
+      <img width="200px" src="assets/profileImage.jpg.jpg" class="img-thumbnail rounded-circle mx-auto d-block" alt="Niken's Profile Picture" />
+      
+      <div class="nama">
+        <h4 class="text-center fw-bold">Isna Muta'alliful Ilma Triswanto</h4>
+      </div>
+
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1" d="M0,160L48,149.3C96,139,192,117,288,144C384,171,480,245,576,272C672,299,768,277,864,250.7C960,224,1056,192,1152,186.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+
+    <!-- Biodata Section -->
+    <div class="firstContainer">
+      <div class="content">
+        <h2 data-aos="fade-up" data-aos-duration="800" id="Biodata" class="nameHeading fw-bold text-center">
+          BIODATA
+        </h2>
+        <div class="container text-center">
+          <div class="row">
+            <div data-aos="fade-up" data-aos-duration="800" class="col-sm-4 mb-2">
+              <p>Hello, let me introduce myself, my name is Isna Muta'alliful Ilma Trsiwanto you can call me Isna.
+              I'm from Sidoarjo, I was born on February 2, 2006. 
+              I graduated from high school at DARUL QURAN MOJOKERTO and
+              am currently continuing my studies at UPN VETERAN "East Java". 
+              I am currently studying Information Systems in class 23</p>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="800" class="col-sm-4 mb-2">
+              <h4 class="subNameHeading fw-bold">EDUCATION</h4>
+              <div class="education">
+                <p class="startEnd">Started on 2010</p>
+                <button type="button" class="btn btn-danger itemEdu" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                  SD Khadijah Wonokromo
+                </button>
+
+                <!-- Modal 1 -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Achievement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">No achievements listed yet.</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="startEnd">Finished on Jun 2016</p>
+                <i class="fas fa-arrow-circle-down itemEdu"></i>
+                
+                <p class="startEnd">Started on Jul 2016</p>
+                <button type="button" class="btn btn-danger itemEdu" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                  SMP DARUL QURAN MOJOKERTO
+                </button>
+                
+                <!-- Modal 2 -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Achievement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">No achievements listed yet.</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="startEnd">Finished on Jun 2019</p>
+                <i class="fas fa-arrow-circle-down itemEdu"></i>
+                
+                <p class="startEnd">Started on Jul 2019</p>
+                <button type="button" class="btn btn-danger itemEdu" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                  SMA DARUL QURAN MOJOKERTO
+                </button>
+                
+                <!-- Modal 3 -->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Achievement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">No achievements listed yet.</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="startEnd">Finished on Jun 2023</p>
+                <i class="fas fa-arrow-circle-down itemEdu"></i>
+                
+                <p class="startEnd">Started on July 2023</p>
+                <button type="button" class="btn btn-danger itemEdu" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                  University (Coming Soon)
+                </button>
+
+                <!-- Modal 4 -->
+                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Achievement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">Not yet</div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="800" class="col-sm-4">
+              <p>My hobbies are singing anywhere, I like culinary,
+                 and usually I like to daydream a bit.
+                 On the other hand, I also like to design something.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="wavesContact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1" d="M0,32L60,58.7C120,85,240,139,360,133.3C480,128,600,64,720,69.3C840,75,960,149,1080,154.7C1200,160,1320,96,1380,64L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    </svg>
+    
+    <!-- Certifications Section -->
+    <div class="fourthContainer">
+      <h2 data-aos="fade-up" data-aos-duration="800" id="Certifications" class="achive text-center fw-bold">
+        CERTIFICATION
+      </h2>
+      <div class="container">
+        <div data-aos="fade-up" data-aos-duration="800" class="table-responsive">
+          <table class="table mx-auto table-hover table-light table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Organizer</th>
+                <th scope="col">Date</th>
+                <th scope="col">Credential</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Tahassus</td>
+                <td>3rd best participant</td>
+                <td>March 17, 2023</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://drive.google.com/file/d/1OoOZPtuqnMNPPlkEFvSRsj3c13YEXLim/view?usp=sharing     " role="button">View</a>
+                </td>
+              </tr>
+                <th scope="row">2</th>
+                <td>Fasilkom Fest</td>
+                <td>Equipment division</td>
+                <td>December 1 - February 17, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://drive.google.com/file/d/1nThbI0w7fZZ99fY-VopeX8srVVbDcKnd/view?usp=sharing" role="button">View</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Maba Cup x COD</td>
+                <td>Consumption & health division</td>
+                <td>February 1, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://drive.google.com/file/d/1nFFeZlFNQlEA8LWzym0RaMQLdH3t2X06/view?usp=sharing" role="button">View</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>LKMM</td>
+                <td>as a participant</td>
+                <td>Oktober 8, 15, 22, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://drive.google.com/file/d/1Zn4D_RbenKIeoenSj5pM2Q3Ot7XRdh0c/view?usp=sharing" role="button">View</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>LKMM</td>
+                <td>public relations division</td>
+                <td>Oktober 5, 6, 12, 2024</td>
+                <td>
+                  <a class="btn btn-primary mx-info" href="https://drive.google.com/file/d/1OMg1qEUL_501swpEKwi8k6liNUAyaNpw/view?usp=sharing" role="button">View</a>
+                </td>
+              </tr>
+              <tr>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <div class="fivethContainer">
+      <h2 id="Contact" class="contactMe fw-bold text-center">CONTACT</h2>
+      <div class="container">
+        <div class="linkSosmed">
+          <a class="itemSosmed" href="https://www.linkedin.com/in/isna-muta-alliful-ilma-ilma-6411ba28b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a class="itemSosmed" href="https://www.instagram.com/isnaallfl_?igsh=MW8zYjU2OWV6YmF4MQ==">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a class="itemSosmed" href="https://www.tiktok.com/@isnaa.jpg2?_t=ZS-8uZGmKzI4wh&_r=1">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a class="itemSosmed" href="mailto:alliilma@gmail.com">
+            <i class="fab fa-google"></i>
+          </a>
+        </div>
+        <p class="text-center">Created by <a href="#">@Isna's</a></p>
+      </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>
